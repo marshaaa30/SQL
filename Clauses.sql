@@ -1,0 +1,18 @@
+use muzammil;
+select*from simple_sales_data;
+rename table simple_sales_data to Sales;
+alter table Sales modify column orderdate date;
+select product,Quantity from Sales;
+select*from Sales;
+select*from Sales where TotalAmount > 20000;
+select*from Sales where Product = "Monitor";
+select sum(TotalAmount) as Total from Sales;
+select avg(TotalAmount) from Sales;
+select count(TotalAmount) as Count from Sales;
+select max(quantity) from Sales;
+select min(quantity) from Sales;
+select*from Sales order by TotalAmount asc;
+select product,quantity from Sales order by quantity asc;
+select product,sum(totalamount) from Sales group by product;
+select customer,avg(totalamount)as AvgAmount from Sales group by customer;
+select product,sum(quantity) from Sales group by product order by sum(quantity) asc;
